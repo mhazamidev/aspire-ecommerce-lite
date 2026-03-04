@@ -1,0 +1,37 @@
+<Solution>
+  <Folder Name="/building-blocks/">
+    <Project Path="building-blocks/Domain.SeekWork/Domain.SeekWork.csproj" Id="449aa609-4817-4fbb-b84d-14565932d8b0" />
+  </Folder>
+  <Folder Name="/services/" />
+  <Folder Name="/services/catalog-service/">
+    <Project Path="services/catalog-service/Catalog.API/Catalog.API.csproj" />
+    <Project Path="services/catalog-service/Catalog.Application/Catalog.Application.csproj" Id="9cf1e40c-8426-4cb4-9ea3-7b9529fdd049" />
+    <Project Path="services/catalog-service/Catalog.Domain/Catalog.Domain.csproj" Id="b81daf21-28ad-47e3-b96f-1252e7b1609d" />
+    <Project Path="services/catalog-service/Catalog.Infrastructure.IoC/Catalog.Infrastructure.IoC.csproj" Id="e733895c-9a5a-43c9-9cc0-a1cee930678a" />
+    <Project Path="services/catalog-service/Catalog.Infrastructure/Catalog.Infrastructure.csproj" Id="b168aba1-09f7-4ec9-854f-460dae53f0e5" />
+  </Folder>
+  <Folder Name="/services/identity-service/">
+    <Project Path="services/identity-service/Identity.API/Identity.API.csproj" />
+    <Project Path="services/identity-service/Identity.Application/Identity.Application.csproj" Id="b7996f00-fb71-4805-b48f-b00b5731dc3c" />
+    <Project Path="services/identity-service/Identity.Domain/Identity.Domain.csproj" Id="4a6d876c-3974-4536-bb5b-daafcfcaddd1" />
+    <Project Path="services/identity-service/Identity.Infrastructure.IoC/Identity.Infrastructure.IoC.csproj" Id="f3bbe697-f314-4518-b6cb-ace91e7b88d9" />
+    <Project Path="services/identity-service/Identity.Infrastructure/Identity.Infrastructure.csproj" Id="3e3e2c66-7706-432a-bd7c-989c079c383a" />
+  </Folder>
+  <Folder Name="/services/order-service/">
+    <Project Path="services/order-service/Order.API/Order.API.csproj" />
+    <Project Path="services/order-service/Order.Application/Order.Application.csproj" Id="f16fc58f-033c-4e7a-b7a9-90e6221be3a5" />
+    <Project Path="services/order-service/Order.Domain/Order.Domain.csproj" Id="730a1179-902f-46c2-b83b-9971057437fd" />
+    <Project Path="services/order-service/Order.Infrastructure.IoC/Order.Infrastructure.IoC.csproj" Id="fd62af02-5ee9-40da-8a1a-4d5f35a46c14" />
+    <Project Path="services/order-service/Order.Infrastructure/Order.Infrastructure.csproj" Id="857995cf-2ea6-483f-a3ca-7b39bc5b3010" />
+  </Folder>
+  <Folder Name="/services/product-service/">
+    <Project Path="services/product-service/Product.API/Product.API.csproj" />
+    <Project Path="services/product-service/Product.Application/Product.Application.csproj" Id="a7b5179c-a30f-458b-b410-ec68c80a66b5" />
+    <Project Path="services/product-service/Product.Domain/Product.Domain.csproj" Id="605022ae-3476-4dd1-ac43-db55579b1710" />
+    <Project Path="services/product-service/Product.Infrastructure.IoC/Product.Infrastructure.IoC.csproj" Id="f5b494f5-cf36-4ace-b68b-273405c1509a" />
+    <Project Path="services/product-service/Product.Infrastructure/Product.Infrastructure.csproj" Id="6ff29cbe-363e-4e44-831c-e5545fbe947f" />
+  </Folder>
+  <Project Path="OnlineShop.AppHost/OnlineShop.AppHost.csproj" />
+  <Project Path="OnlineShop.ServiceDefaults/OnlineShop.ServiceDefaults.csproj" />
+  <Project Path="OnlineShop.Shared/OnlineShop.Shared.csproj" />
+</Solution>

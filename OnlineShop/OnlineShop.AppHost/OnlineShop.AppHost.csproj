@@ -1,21 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <Sdk Name="Aspire.AppHost.Sdk" Version="9.5.0" />
+<Project Sdk="Aspire.AppHost.Sdk/13.1.0">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UserSecretsId>61543056-534a-4149-9102-80058c88d6c6</UserSecretsId>
+    <UserSecretsId>39ac2750-5f27-4b56-abd7-7688b2bc995d</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.0" />
+    <PackageReference Include="Aspire.Hosting.SqlServer" Version="13.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OnlineShop.Identity\OnlineShop.Identity.csproj" />
+    <ProjectReference Include="..\services\catalog-service\Catalog.API\Catalog.API.csproj" />
+    <ProjectReference Include="..\services\identity-service\Identity.API\Identity.API.csproj" />
+    <ProjectReference Include="..\services\order-service\Order.API\Order.API.csproj" />
+    <ProjectReference Include="..\services\product-service\Product.API\Product.API.csproj" />
   </ItemGroup>
 
 </Project>
