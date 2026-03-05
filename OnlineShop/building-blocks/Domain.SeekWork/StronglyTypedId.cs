@@ -1,4 +1,6 @@
-﻿namespace Domain.SeekWork;
+﻿using Domain.SeekWork.Exceptions;
+
+namespace Domain.SeekWork;
 
 public abstract class StronglyTypedId<T> : ValueObject
 {

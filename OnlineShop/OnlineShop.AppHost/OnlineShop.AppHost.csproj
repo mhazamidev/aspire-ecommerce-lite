@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OnlineShop.Identity\OnlineShop.Identity.csproj" />
     <ProjectReference Include="..\services\catalog-service\Catalog.API\Catalog.API.csproj" />
     <ProjectReference Include="..\services\identity-service\Identity.API\Identity.API.csproj" />
     <ProjectReference Include="..\services\order-service\Order.API\Order.API.csproj" />
