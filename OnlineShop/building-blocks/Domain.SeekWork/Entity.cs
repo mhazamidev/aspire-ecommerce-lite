@@ -1,14 +1,22 @@
-﻿namespace Domain.SeekWork;
+﻿using Domain.SeekWork.Events;
+
+namespace Domain.SeekWork;
 
 public abstract class Entity<TId>
     where TId : StronglyTypedId<TId>
 {
     public TId Id { get; protected set; }
 
+    private readonly List<IDomainEvent> _domainEvents = new();
+
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
     protected Entity(TId id)
     {
         Id = id ?? throw new ArgumentNullException(nameof(id));
     }
+
+
 
     public override bool Equals(object? obj)
     {
@@ -29,4 +37,18 @@ public abstract class Entity<TId>
 
     public static bool operator !=(Entity<TId>? left, Entity<TId>? right)
         => !Equals(left, right);
+
+
+    protected void AddDomainEvent(IDomainEvent domainEvent)
+    {
+        if (domainEvent is null)
+            throw new ArgumentNullException(nameof(domainEvent));
+
+        _domainEvents.Add(domainEvent);
+    }
+
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
+    }
 }

@@ -1,6 +1,8 @@
 <Solution>
   <Folder Name="/building-blocks/">
     <Project Path="building-blocks/Domain.SeekWork/Domain.SeekWork.csproj" Id="449aa609-4817-4fbb-b84d-14565932d8b0" />
+    <Project Path="building-blocks/OnlineShop.Shared/OnlineShop.Shared.csproj" Id="bb75ecd0-da91-4fcf-9679-1166a34ded26" />
+    <Project Path="building-blocks/OnlineShop.Utility/OnlineShop.Utility.csproj" Id="d4575d9a-8b4f-427e-b61e-670079d66cde" />
   </Folder>
   <Folder Name="/services/" />
   <Folder Name="/services/catalog-service/">
@@ -33,5 +35,4 @@
   </Folder>
   <Project Path="OnlineShop.AppHost/OnlineShop.AppHost.csproj" />
   <Project Path="OnlineShop.ServiceDefaults/OnlineShop.ServiceDefaults.csproj" />
-  <Project Path="OnlineShop.Shared/OnlineShop.Shared.csproj" />
 </Solution>

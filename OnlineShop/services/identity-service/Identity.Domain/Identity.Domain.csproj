@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\building-blocks\Domain.SeekWork\Domain.SeekWork.csproj" />
+    <ProjectReference Include="..\..\..\building-blocks\OnlineShop.Utility\OnlineShop.Utility.csproj" />
   </ItemGroup>
 
 </Project>
