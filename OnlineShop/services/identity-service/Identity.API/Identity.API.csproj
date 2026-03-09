@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\OnlineShop.ServiceDefaults\OnlineShop.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Identity.Infrastructure.IoC\Identity.Infrastructure.IoC.csproj" />
   </ItemGroup>
 
 </Project>

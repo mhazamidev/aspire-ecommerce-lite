@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\OnlineShop.ServiceDefaults\OnlineShop.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Catalog.Infrastructure.IoC\Catalog.Infrastructure.IoC.csproj" />
   </ItemGroup>
 
 </Project>

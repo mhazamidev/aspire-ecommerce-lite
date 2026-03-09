@@ -1,19 +1,41 @@
+using OnlineShop.AppHost.Infrastructure.Databases;
+using OnlineShop.AppHost.Services;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
-var sql_password = builder.AddParameter("SQLPassword", secret: true);
+#region parameters
 
-var sql = builder
-    .AddSqlServer("sql", password: sql_password)
-    .WithDataVolume()
-    .AddDatabase("sqlconnection", "onlineshop_identity");
+var sqlPassword = builder.AddParameter("SqlPassword", secret: true);  
 
-builder.AddProject<Projects.Identity_API>("identity-api")
-    .WithReference(sql);
+var jwtKey = builder.AddParameter("JwtKey", secret: true);
+var jwtIssuer = builder.AddParameter("JwtIssuer", secret: true);
+var jwtAudience = builder.AddParameter("JwtAudience", secret: true);
+var jwtTokenExpire = builder.AddParameter("JwtTokenExpire", secret: true);
+var jwtRefreshExpire = builder.AddParameter("JwtRefreshExpire", secret: true);
 
-builder.AddProject<Projects.Catalog_API>("catalog-api");
+var postgresUser = builder.AddParameter("PostgresUsername", secret: true);
+var postgresPassword = builder.AddParameter("PostgresPassword", secret: true);
 
-builder.AddProject<Projects.Order_API>("order-api");
+#endregion
 
-builder.AddProject<Projects.Product_API>("product-api");
+#region Databases
+
+var sql = builder.AddIdentityDatabase(password: sqlPassword);
+
+var postgres = builder.AddCatalogDatabase(username: postgresUser, password: postgresPassword);
+
+#endregion
+
+#region Services
+
+builder.AddIdentityService(sql, jwtKey, jwtIssuer, jwtAudience, jwtTokenExpire, jwtRefreshExpire);
+
+builder.AddCatalogService(postgres, jwtKey, jwtIssuer, jwtAudience);
+
+builder.AddOrderService(jwtKey, jwtIssuer, jwtAudience);
+
+builder.AddProductService(jwtKey, jwtIssuer, jwtAudience);
+
+#endregion
 
 builder.Build().Run();

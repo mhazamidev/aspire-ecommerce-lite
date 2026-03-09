@@ -18,24 +18,8 @@ public static class Validator
             return false;
         }
     }
-
-    public static bool IsValid(this Guid value)
-    {
-        return value == Guid.Empty;
-    }
-
-    public static bool IsValid(this Guid? value)
-    {
-        return value.HasValue && value.Value != Guid.Empty;
-    }
-
-    public static bool IsValid(this DateTime value)
-    {
-        return value != DateTime.MinValue;
-    }
-
-    public static bool IsValid(this DateTime? value)
-    {
-        return value.HasValue && value != DateTime.MinValue;
-    }
+    public static bool IsValid(this Guid value) => value == Guid.Empty;
+    public static bool IsValid(this Guid? value) => value.HasValue && value.Value != Guid.Empty;
+    public static bool IsValid(this DateTime value) => value != DateTime.MinValue;
+    public static bool IsValid(this DateTime? value) => value.HasValue && value != DateTime.MinValue;
 }
