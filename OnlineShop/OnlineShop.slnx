@@ -1,7 +1,9 @@
 <Solution>
   <Folder Name="/building-blocks/">
+    <Project Path="building-blocks/Api.Shared/Api.Shared.csproj" Id="fa54e8da-3c2e-44f6-be72-e19a8a90eae2" />
+    <Project Path="building-blocks/Application.Shared/Application.Shared.csproj" Id="9df66e01-5ce8-47ca-a7d8-73a15d3740eb" />
     <Project Path="building-blocks/Domain.SeekWork/Domain.SeekWork.csproj" Id="449aa609-4817-4fbb-b84d-14565932d8b0" />
-    <Project Path="building-blocks/OnlineShop.Shared/OnlineShop.Shared.csproj" Id="bb75ecd0-da91-4fcf-9679-1166a34ded26" />
+    <Project Path="building-blocks/Identity.Shared/Identity.Shared.csproj" Id="624e0d32-da2f-4618-b065-b597a44a5364" />
     <Project Path="building-blocks/OnlineShop.Utility/OnlineShop.Utility.csproj" Id="d4575d9a-8b4f-427e-b61e-670079d66cde" />
   </Folder>
   <Folder Name="/services/" />

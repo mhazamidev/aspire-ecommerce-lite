@@ -9,6 +9,7 @@ public static class SqlServerConfig
 
         return builder
             .AddSqlServer("sql", password: password)
+            .WithHostPort(14333)
             .WithDataVolume()
             .AddDatabase("sqlconnection", "onlineshop_identity");
     }

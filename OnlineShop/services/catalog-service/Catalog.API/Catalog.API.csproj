@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\building-blocks\Api.Shared\Api.Shared.csproj" />
     <ProjectReference Include="..\..\..\OnlineShop.ServiceDefaults\OnlineShop.ServiceDefaults.csproj" />
     <ProjectReference Include="..\Catalog.Infrastructure.IoC\Catalog.Infrastructure.IoC.csproj" />
   </ItemGroup>
