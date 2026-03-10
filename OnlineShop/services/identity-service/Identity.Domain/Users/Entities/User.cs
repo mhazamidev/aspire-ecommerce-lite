@@ -10,28 +10,62 @@ public class User : AggregateRoot<UserId>
     public FullName Name { get; private set; }
     public Email Email { get; private set; }
     public bool IsActive { get; private set; }
+    public string? UserName { get; private set; }
 
     private readonly List<RefreshToken> _refreshTokens = new();
     public IReadOnlyCollection<RefreshToken> RefreshTokens => _refreshTokens.AsReadOnly();
     private User() : base(UserId.NewId()) { }
 
-    private User(UserId id, FullName fullName, Email email, bool isActive) : base(id)
+    private User(UserId id, string? userName,  FullName fullName, Email email, bool isActive) : base(id)
     {
         Name = fullName;
         Email = email;
         IsActive = isActive;
+        UserName = userName;
     }
 
-    public static User Create(string firstName, string lastName, string email, bool isActive)
+    public static User Create(string? userName,  string firstName, string lastName, string email, bool isActive)
     {
+        if (string.IsNullOrEmpty(userName))
+            throw new DomainException("UserName cannot be null or empty.");
+
         return new User
         (
             UserId.NewId(),
+            userName,
             FullName.Create(firstName, lastName),
             Email.Create(email),
             isActive
         );
     }
+
+    public static User Map(UserId id, string? userName,  string firstName, string lastName, string email, bool isActive)
+    {
+        if (string.IsNullOrEmpty(userName))
+            throw new DomainException("UserName cannot be null or empty.");
+
+        return new User
+        (
+            id,
+            userName,
+            FullName.Create(firstName, lastName),
+            Email.Create(email),
+            isActive
+        );
+    }
+
+
+    public void ChangeUserName(string? newUserName)
+    {
+        if (string.IsNullOrEmpty(newUserName))
+            throw new DomainException("UserName cannot be null or empty.");
+
+        if (UserName == newUserName)
+            return;
+
+        UserName = newUserName;
+    }
+
 
     public void ChangeName(string firstName, string lastName)
     {
@@ -74,7 +108,7 @@ public class User : AggregateRoot<UserId>
     public void AddRefreshToken(string token, DateTime expires)
     {
         var refreshToken = RefreshToken.Create(Id, token, expires);
-        
+
         _refreshTokens.Add(refreshToken);
 
         AddDomainEvent(new UserRefreshTokenAddedDomainEvent(Id, refreshToken.Id));

@@ -10,6 +10,8 @@ builder.Services.AddOpenApi();
 builder.Services
     .AddCarter()
     .AddVersion();
+builder.Services.AddJwtConfig(builder.Configuration);
+
 
 var app = builder.Build();
 

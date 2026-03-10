@@ -23,6 +23,7 @@ public static class Extensions
     public static TBuilder AddServiceDefaults<TBuilder>(this TBuilder builder) where TBuilder : IHostApplicationBuilder
     {
         builder.ConfigureOpenTelemetry();
+        builder.Services.AddHttpContextAccessor();
 
         builder.AddDefaultHealthChecks();
 
