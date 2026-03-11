@@ -1,7 +1,11 @@
 using Api.Shared.Extensions;
+using Application.Shared.Extensions;
 using Carter;
 using Identity.API.Extensions;
+using Identity.Application.Behaviours;
+using Identity.Application.User.Commands.Login;
 using Identity.Infrastructure.IoC.Services;
+using MediatR;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +16,10 @@ builder.Services.AddOpenApi();
 builder.Services
     .AddCarter()
     .AddVersion();
+
+builder.Services.AddScoped(typeof(IPipelineBehavior<,>), typeof(TransactionBehaviour<,>));
+
+builder.Services.AddMediatRConfig(typeof(LoginCommand).Assembly);
 
 builder.Services.AddRepositories();
 

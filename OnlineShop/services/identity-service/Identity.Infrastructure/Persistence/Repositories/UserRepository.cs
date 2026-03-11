@@ -14,6 +14,8 @@ public class UserRepository(
     SignInManager<IdentityUserEntity> _signInManager,
     ApplicationDbContext _context) : IUserRepository
 {
+
+
     public async Task<IdentityUserEntity?> LoginAsync(string username, string password)
     {
         var identityUser = await _userManager.FindByNameAsync(username);

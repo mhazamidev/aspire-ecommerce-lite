@@ -77,5 +77,4 @@ public sealed class RefreshToken : Entity<RefreshTokenId>
         return rotated;
     }
 
-
 }

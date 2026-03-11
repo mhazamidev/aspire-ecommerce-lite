@@ -9,7 +9,7 @@ namespace Application.Shared.Extensions;
 
 public static class MediatRExtensions
 {
-    public static void AddMediatR(this IServiceCollection services, Assembly assembly)
+    public static void AddMediatRConfig(this IServiceCollection services, Assembly assembly)
     {
         services.AddMediatR(cfg =>
         {
